@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/ADLaM%20Display.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/css/driver.css">
+    <link rel="stylesheet" href="assets/css/datatables.min.css">
     <link rel="stylesheet" href="assets/css/Lightbox-Gallery-No-Gutters-baguetteBox.min.css">
 </head>
 
@@ -163,8 +164,12 @@
     <script src="assets/js/tutorial.js"></script>
     <script src="assets/js/sensor.js"></script>
     <script src="assets/js/realtime-count.js"></script>
+    <script src="assets/js/protectWebsite.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/theme.js"></script>
+    <script>
+          ClientObj.drive();
+    </script>
 </body>
 
 </html>

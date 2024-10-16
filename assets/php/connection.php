@@ -1,8 +1,12 @@
 <?php
   error_reporting(E_ALL);
   ini_set('display_errors', 1);
+    require_once('ssp.class.php');
     $database = 'iscps';
-    $db = new PDO('mysql:host=localhost', 'root', '');
+    $username = 'root';
+    $password = '';
+    $host = 'localhost';
+    $db = new PDO("mysql:host=$host", $username, $password);
     $query = "CREATE DATABASE IF NOT EXISTS $database";
 
     try {
