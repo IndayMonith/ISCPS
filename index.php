@@ -127,34 +127,23 @@
                 <div class="modal-header">
                     <h4 class="modal-title">Sign In</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="modal-body"><form class="row g-3 needs-validation" novalidate>
-                    <div class="col-md-12">
-                        <label class="form-label" for="validationCustom01">Username</label
-                        ><input
-                        id="validationCustom01"
-                        class="form-control form-control"
-                        type="text"
-                        required
-                        placeholder="Username"
-                        />
-                        <div class="valid-feedback"><span> Looks good! </span></div>
-                        <div class="invalid-feedback"><span> Username Can't be empty! </span></div>
-                    </div>
-                    <div class="col-md-12">
-                        <label class="form-label" for="validationCustom02">Password</label
-                        ><input
-                        id="validationCustom02"
-                        class="form-control form-control"
-                        type="text"
-                        required
-                        placeholder="Password"
-                        />
-                        <div class="valid-feedback"><span> Looks good! </span></div>
-                        <div class="invalid-feedback"><span> Password Can't be empty! </span></div>
-                    </div>
-                    <div class="col-12 text-center">
-                        <button class="btn btn-primary w-100" type="submit">Sign In</button>
-                    </div>
+                <div class="modal-body">
+                    <form id="sign-in-form">
+                        <div class="form-floating mb-3">
+                            <input class="form-control" type="text" placeholder="username" name="username" value="<?php echo isset($_COOKIE['username']) ? $_COOKIE['username'] : ''; ?>">
+                            <label class="form-label" for="floatingInput">Username</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" type="password" placeholder="password" name="password" value="<?php echo isset($_COOKIE['password']) ? $_COOKIE['password'] : ''; ?>">
+                            <label class="form-label" for="floatingInput">Password</label>
+                        </div>
+                        <div class="d-flex justify-content-center form-check mb-4">
+                            <input type="checkbox" class="form-check-input me-2" id="form2Example33" name="remember" <?php echo isset($_COOKIE['username']) ? 'checked' : ''; ?>>
+                            <label class="form-check-label" for="form2Example33">Remember Me</label>
+                        </div>
+                        
+                        <button class="btn btn-primary btn-block mb-4 w-100" type="submit">Sign In</button>
+
                     </form>
                 </div>
                 <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button></div>
@@ -166,6 +155,8 @@
     <script src="assets/js/chart.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/driver.js.iife.js"></script>
+    <script src="assets/js/datatables.min.js"></script>
+    <script src="assets/js/sweetalert2.js"></script>
     <script src="assets/js/Lightbox-Gallery-No-Gutters-baguetteBox.min.js"></script>
     <script src="assets/js/Lightbox-Gallery-No-Gutters-Lightbox-Gallery.js"></script>
     <script src="assets/js/form-submit.js"></script>
