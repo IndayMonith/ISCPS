@@ -76,7 +76,7 @@
                                 <div class="card-body">
                                     <p id="status1" class="m-0"><strong>P1 - </strong></p>
                                     <p id="time1" class="text-white small m-0">TIME IN: <span id="inTime1"></span></p>
-                                    <p id="outTime1" class="text-white small m-0">TIME OUT: <span id="outTime1"></span></p>
+                                    <p class="text-white small m-0">TIME OUT: <span id="outTime1"></span></p>
                                 </div>
                             </div>
                         </div>
@@ -85,7 +85,7 @@
                                 <div class="card-body">
                                     <p id="status2" class="m-0"><strong>P2 - </strong></p>
                                     <p id="time2" class="text-white small m-0">TIME IN: <span id="inTime2"></span></p>
-                                    <p id="outTime2" class="text-white small m-0">TIME OUT: <span id="outTime2"></span></p>
+                                    <p class="text-white small m-0">TIME OUT: <span id="outTime2"></span></p>
                                 </div>
                             </div>
                         </div>
@@ -94,7 +94,7 @@
                                 <div class="card-body">
                                     <p id="status3" class="m-0"><strong>P3 - </strong></p>
                                     <p id="time3" class="text-white small m-0">TIME IN: <span id="inTime3"></span></p>
-                                    <p id="outTime3" class="text-white small m-0">TIME OUT: <span id="outTime3"></span></p>
+                                    <p class="text-white small m-0">TIME OUT: <span id="outTime3"></span></p>
                                 </div>
                             </div>
                         </div>
@@ -103,7 +103,7 @@
                                 <div class="card-body">
                                     <p id="status4" class="m-0"><strong>P4 - </strong></p>
                                     <p id="time4" class="text-white small m-0">TIME IN: <span id="inTime4"></span></p>
-                                    <p id="outTime4" class="text-white small m-0">TIME OUT: <span id="outTime4"></span></p>
+                                    <p class="text-white small m-0">TIME OUT: <span id="outTime4"></span></p>
                                 </div>
                             </div>
                         </div>
