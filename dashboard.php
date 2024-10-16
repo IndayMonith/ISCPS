@@ -21,7 +21,7 @@
                         <h2 class="mt-2" style="font-family: 'ADLaM Display', serif;color: rgb(60,14,80);">ISCPS&nbsp;</h2>
                         <h2 class="d-sm-none d-md-block mt-2" style="font-family: 'ADLaM Display', serif;color: rgb(60,14,80);">- IoT Smart Car Parking System&nbsp;</h2>
                         <ul class="navbar-nav flex-nowrap ms-auto">
-                            <li class="nav-item"><button class="btn btn-primary" type="button">Sign out</button></li>
+                            <li class="nav-item"><a class="btn btn-primary" href="assets/php/sign-out.php">Sign out</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -198,8 +198,8 @@
                 <div class="modal-body">
                     <p>Here you can remotely open the Entrance or Exit.</p>
                     <div class="row">
-                        <div class="col text-center"><a class="btn btn-primary btn-sm w-100" role="button" href="#" data-bs-target="#remote" data-bs-toggle="modal"><i class="fas fa-download fa-sm text-white-50"></i>&nbsp;Open Entrance</a></div>
-                        <div class="col text-center"><a class="btn btn-primary btn-sm w-100" role="button" href="#" data-bs-target="#remote" data-bs-toggle="modal"><i class="fas fa-download fa-sm text-white-50"></i>&nbsp;Open Exit</a></div>
+                        <div class="col text-center"><a class="btn btn-primary btn-sm w-100" role="button" href="#" id="openEntrance"><i class="fas fa-download fa-sm text-white-50"></i>&nbsp;Open Entrance</a></div>
+                        <div class="col text-center"><a class="btn btn-primary btn-sm w-100" role="button" href="#" id="openExit"><i class="fas fa-download fa-sm text-white-50"></i>&nbsp;Open Exit</a></div>
                     </div>
                 </div>
                 <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button></div>
@@ -220,6 +220,7 @@
     <script src="assets/js/sensor.js"></script>
     <script src="assets/js/realtime-count.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/control-servo-motor.js"></script>
     <script src="assets/js/theme.js"></script>
 </body>
 
