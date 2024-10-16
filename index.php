@@ -36,7 +36,7 @@
                                     <div class="row g-0 align-items-center">
                                         <div class="col me-2">
                                             <div class="text-uppercase text-success fw-bold text-xs mb-1"><span>VEHICLE IN</span></div>
-                                            <div class="text-dark fw-bold h5 mb-0"><span>0</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span id="vehicleIn">0</span></div>
                                         </div>
                                         <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
                                     </div>
@@ -49,7 +49,7 @@
                                     <div class="row g-0 align-items-center">
                                         <div class="col me-2">
                                             <div class="text-uppercase text-success fw-bold text-xs mb-1"><span>VEHICLE out</span></div>
-                                            <div class="text-dark fw-bold h5 mb-0"><span>0</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span id="vehicleOut">0</span></div>
                                         </div>
                                         <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
                                     </div>
@@ -62,7 +62,7 @@
                                     <div class="row g-0 align-items-center">
                                         <div class="col me-2">
                                             <div class="text-uppercase text-success fw-bold text-xs mb-1"><span>CURRENT VEHICLE PARKED</span></div>
-                                            <div class="text-dark fw-bold h5 mb-0"><span>0</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span  id="vehicleCurrent">0</span></div>
                                         </div>
                                         <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
                                     </div>
@@ -162,6 +162,7 @@
     <script src="assets/js/form-submit.js"></script>
     <script src="assets/js/tutorial.js"></script>
     <script src="assets/js/sensor.js"></script>
+    <script src="assets/js/realtime-count.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/theme.js"></script>
 </body>

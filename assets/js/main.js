@@ -34,7 +34,7 @@
             result.status,
             5000
           );
-          
+
           if (result.status == "success") {
             setTimeout(function () {
               window.location.href = "dashboard.php";
@@ -79,6 +79,8 @@
   // ClientObj.drive();
   // AdminObj.drive();
   setInterval(checkSensor, 2000);
-  checkSensor();
+  setInterval(getCount, 2000);
   submitLoginForm("#sign-in-form");
+  checkSensor();
+  getCount()
 })();

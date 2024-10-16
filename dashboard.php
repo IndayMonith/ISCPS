@@ -36,7 +36,7 @@
                                     <div class="row g-0 align-items-center">
                                         <div class="col me-2">
                                             <div class="text-uppercase text-success fw-bold text-xs mb-1"><span>VEHICLE IN</span></div>
-                                            <div class="text-dark fw-bold h5 mb-0"><span>0</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span id="vehicleIn">0</span></div>
                                         </div>
                                         <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
                                     </div>
@@ -49,7 +49,7 @@
                                     <div class="row g-0 align-items-center">
                                         <div class="col me-2">
                                             <div class="text-uppercase text-success fw-bold text-xs mb-1"><span>VEHICLE out</span></div>
-                                            <div class="text-dark fw-bold h5 mb-0"><span>0</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span id="vehicleOut">0</span></div>
                                         </div>
                                         <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
                                     </div>
@@ -62,7 +62,7 @@
                                     <div class="row g-0 align-items-center">
                                         <div class="col me-2">
                                             <div class="text-uppercase text-success fw-bold text-xs mb-1"><span>CURRENT VEHICLE PARKED</span></div>
-                                            <div class="text-dark fw-bold h5 mb-0"><span>0</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span  id="vehicleCurrent">0</span></div>
                                         </div>
                                         <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
                                     </div>
@@ -75,8 +75,8 @@
                             <div id="slot1" class="card text-white shadow">
                                 <div class="card-body">
                                     <p id="status1" class="m-0"><strong>P1 - </strong></p>
-                                    <p id="time1" class="text-white small m-0">TIME IN: <span id="inTime1"></span></p>
-                                    <p class="text-white small m-0">TIME OUT: <span id="outTime1"></span></p>
+                                    <p class="text-white small m-0">TIME IN: <strong id="inTime1"></strong></p>
+                                    <p class="text-white small m-0">TIME OUT: <strong id="outTime1"></strong></p>
                                 </div>
                             </div>
                         </div>
@@ -84,8 +84,8 @@
                             <div id="slot2" class="card text-white shadow">
                                 <div class="card-body">
                                     <p id="status2" class="m-0"><strong>P2 - </strong></p>
-                                    <p id="time2" class="text-white small m-0">TIME IN: <span id="inTime2"></span></p>
-                                    <p class="text-white small m-0">TIME OUT: <span id="outTime2"></span></p>
+                                    <p class="text-white small m-0">TIME IN: <strong id="inTime2"></strong></p>
+                                    <p class="text-white small m-0">TIME OUT: <strong id="outTime2"></strong></p>
                                 </div>
                             </div>
                         </div>
@@ -93,8 +93,8 @@
                             <div id="slot3" class="card text-white shadow">
                                 <div class="card-body">
                                     <p id="status3" class="m-0"><strong>P3 - </strong></p>
-                                    <p id="time3" class="text-white small m-0">TIME IN: <span id="inTime3"></span></p>
-                                    <p class="text-white small m-0">TIME OUT: <span id="outTime3"></span></p>
+                                    <p class="text-white small m-0">TIME IN: <strong id="inTime3"></strong></p>
+                                    <p class="text-white small m-0">TIME OUT: <strong id="outTime3"></strong></p>
                                 </div>
                             </div>
                         </div>
@@ -102,8 +102,8 @@
                             <div id="slot4" class="card text-white shadow">
                                 <div class="card-body">
                                     <p id="status4" class="m-0"><strong>P4 - </strong></p>
-                                    <p id="time4" class="text-white small m-0">TIME IN: <span id="inTime4"></span></p>
-                                    <p class="text-white small m-0">TIME OUT: <span id="outTime4"></span></p>
+                                    <p class="text-white small m-0">TIME IN: <strong id="inTime4"></strong></p>
+                                    <p class="text-white small m-0">TIME OUT: <strong id="outTime4"></strong></p>
                                 </div>
                             </div>
                         </div>
@@ -211,11 +211,14 @@
     <script src="assets/js/chart.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/driver.js.iife.js"></script>
+    <script src="assets/js/datatables.min.js"></script>
+    <script src="assets/js/sweetalert2.js"></script>
     <script src="assets/js/Lightbox-Gallery-No-Gutters-baguetteBox.min.js"></script>
     <script src="assets/js/Lightbox-Gallery-No-Gutters-Lightbox-Gallery.js"></script>
     <script src="assets/js/form-submit.js"></script>
     <script src="assets/js/tutorial.js"></script>
     <script src="assets/js/sensor.js"></script>
+    <script src="assets/js/realtime-count.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/theme.js"></script>
 </body>

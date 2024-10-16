@@ -9,37 +9,76 @@ let lastKnownStates = {
 function updateSlot(slotId, statusId, status, parkingSlot) {
   let slotElement = document.getElementById(slotId);
   let statusElement = document.getElementById(statusId);
-  let inTimeElement = document.getElementById(`inTime${slotId.charAt(slotId.length - 1)}`);
-  let outTimeElement = document.getElementById(`outTime${slotId.charAt(slotId.length - 1)}`);
+  let inTimeElement = document.getElementById(
+    `inTime${slotId.charAt(slotId.length - 1)}`
+  );
+  let outTimeElement = document.getElementById(
+    `outTime${slotId.charAt(slotId.length - 1)}`
+  );
 
-  // Check the current state against the last known state
+  let currentDateTime = new Date().toLocaleString();
+
+  let slotNumber = slotId.replace(/\D/g, ""); // Extract the numeric part from slotId
+
   if (status === 1) {
-    // If the slot is now available
+    // Slot is available
     if (lastKnownStates[slotId].state === 0) {
-      // Log the out time only once when the slot becomes available
-      lastKnownStates[slotId].outTime = new Date().toLocaleString();
-      outTimeElement.innerHTML = lastKnownStates[slotId].outTime;  // Display TIME OUT
-      console.log(`${parkingSlot} Time: Out at ${lastKnownStates[slotId].outTime}`);
+      lastKnownStates[slotId].outTime = currentDateTime; // Update out time
+      outTimeElement.innerHTML = lastKnownStates[slotId].outTime; // Display TIME OUT
+
+      // console.log(`${parkingSlot} Time: Out at ${lastKnownStates[slotId].outTime}`);
+
+      // Send AJAX request to update the log with time_out
+      $.ajax({
+        type: "POST",
+        url: "assets/php/generate_logs.php", // Replace with actual backend PHP URL
+        data: {
+          slot_id: slotNumber, // Use the numeric part of slotId
+          time_out: lastKnownStates[slotId].outTime,
+        },
+        success: function (response) {
+          // console.log(`Log updated for ${parkingSlot} with time_out.`);
+        },
+        error: function (error) {
+          console.error(`Error updating log for ${parkingSlot}.`);
+        },
+      });
     }
 
     slotElement.classList.remove("bg-danger");
     slotElement.classList.add("bg-success");
-    statusElement.innerHTML = "<strong>" + parkingSlot + " Available</strong>";
-    lastKnownStates[slotId].state = 1; // Update the last known state
+    statusElement.innerHTML = `<strong>${parkingSlot} Available</strong>`;
+    lastKnownStates[slotId].state = 1; // Update last known state
   } else {
-    // If the slot is now occupied
+    // Slot is occupied
     if (lastKnownStates[slotId].state === 1) {
-      // Log the in time only once when the slot becomes occupied
-      lastKnownStates[slotId].inTime = new Date().toLocaleString();
-      inTimeElement.innerHTML = lastKnownStates[slotId].inTime;  // Display TIME IN
-      outTimeElement.innerHTML = null;
-      console.log(`${parkingSlot} Time: In at ${lastKnownStates[slotId].inTime}`);
+      lastKnownStates[slotId].inTime = currentDateTime; // Update in time
+      inTimeElement.innerHTML = lastKnownStates[slotId].inTime; // Display TIME IN
+      outTimeElement.innerHTML = null; // Clear out time
+
+      // console.log(`${parkingSlot} Time: In at ${lastKnownStates[slotId].inTime}`);
+
+      // Send AJAX request to insert a new log with time_in
+      $.ajax({
+        type: "POST",
+        url: "assets/php/generate_logs.php", // Replace with actual backend PHP URL
+        data: {
+          slot_id: slotNumber, // Use the numeric part of slotId
+          time_in: lastKnownStates[slotId].inTime,
+        },
+        success: function (response) {
+          // console.log(response);
+        },
+        error: function (error) {
+          console.error(`Error inserting log for ${parkingSlot}.`);
+        },
+      });
     }
 
     slotElement.classList.remove("bg-success");
     slotElement.classList.add("bg-danger");
-    statusElement.innerHTML = "<strong>" + parkingSlot + " Occupied</strong>";
-    lastKnownStates[slotId].state = 0; // Update the last known state
+    statusElement.innerHTML = `<strong>${parkingSlot} Occupied</strong>`;
+    lastKnownStates[slotId].state = 0; // Update last known state
   }
 }
 
@@ -48,7 +87,7 @@ function checkSensor() {
     type: "GET",
     url: "http://10.0.0.1/d1",
     success: function (data) {
-      updateSlot('slot1', 'status1', data.sensorState, "P1 - ");
+      updateSlot("slot1", "status1", data.sensorState, "P1 - ");
     },
     error: function (data) {
       console.error("Error fetching data for slot 1");
