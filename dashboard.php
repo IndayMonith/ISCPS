@@ -121,10 +121,12 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <div class="chart-area"><canvas data-bss-chart="{&quot;type&quot;:&quot;doughnut&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;Direct&quot;,&quot;Social&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;backgroundColor&quot;:[&quot;#4e73df&quot;,&quot;#1cc88a&quot;],&quot;borderColor&quot;:[&quot;#ffffff&quot;,&quot;#ffffff&quot;],&quot;data&quot;:[&quot;50&quot;,&quot;30&quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:false,&quot;legend&quot;:{&quot;display&quot;:false,&quot;labels&quot;:{&quot;fontStyle&quot;:&quot;normal&quot;}},&quot;title&quot;:{&quot;fontStyle&quot;:&quot;normal&quot;}}}"></canvas></div>
-                            <div class="text-center small mt-4"><span class="me-2"><i class="fas fa-circle text-primary"></i>&nbsp;VEHICLE IN</span><span class="me-2"><i class="fas fa-circle text-success"></i>&nbsp;VEHICLE OUT</span></div>
+                            <div class="chart-area" id="chart-data">
+                                <canvas id="chartCanvas"></canvas>
+                            </div>
                         </div>
                     </div>
+
                     <div class="card shadow mb-4" id="parking-logs">
                         <div class="card-header py-3">
                             <p class="text-primary m-0 fw-bold">Parking Logs</p>
@@ -181,7 +183,7 @@
     <script src="assets/js/tutorial.js"></script>
     <script src="assets/js/sensor.js"></script>
     <script src="assets/js/realtime-count.js"></script>
-    <script src="assets/js/protectWebsite.js"></script>
+    <!-- <script src="assets/js/protectWebsite.js"></script> -->
     <script src="assets/js/main.js"></script>
     <script src="assets/js/control-servo-motor.js"></script>
     <script src="assets/js/theme.js"></script>

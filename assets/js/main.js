@@ -132,10 +132,12 @@ function submitLoginForm(formId) {
     },
   });
 
+  
   // ClientObj.drive();
   // AdminObj.drive();
   setInterval(checkSensor, 2000);
   setInterval(getCount, 2000);
+  getChartData();
   submitLoginForm("#sign-in-form");
   checkSensor();
   getCount();
