@@ -1,0 +1,1 @@
+SELECT slot_id, COUNT(slot_id) FROM logs WHERE created_at >= CURRENT_DATE GROUP BY slot_id;

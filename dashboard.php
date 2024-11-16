@@ -78,6 +78,8 @@
                                     <p id="status1" class="m-0"><strong>P1 - </strong></p>
                                     <p class="text-white small m-0">TIME IN: <strong id="inTime1"></strong></p>
                                     <p class="text-white small m-0">TIME OUT: <strong id="outTime1"></strong></p>
+                                    <p class="text-white small m-0">DURATION: <strong id="duration1"></strong></p>
+                                    <p class="text-white small m-0">TOTAL: <strong id="slotcount1"></strong></p>
                                 </div>
                             </div>
                         </div>
@@ -87,6 +89,8 @@
                                     <p id="status2" class="m-0"><strong>P2 - </strong></p>
                                     <p class="text-white small m-0">TIME IN: <strong id="inTime2"></strong></p>
                                     <p class="text-white small m-0">TIME OUT: <strong id="outTime2"></strong></p>
+                                    <p class="text-white small m-0">DURATION: <strong id="duration2"></strong></p>
+                                    <p class="text-white small m-0">TOTAL: <strong id="slotcount2"></strong></p>
                                 </div>
                             </div>
                         </div>
@@ -96,6 +100,8 @@
                                     <p id="status3" class="m-0"><strong>P3 - </strong></p>
                                     <p class="text-white small m-0">TIME IN: <strong id="inTime3"></strong></p>
                                     <p class="text-white small m-0">TIME OUT: <strong id="outTime3"></strong></p>
+                                    <p class="text-white small m-0">DURATION: <strong id="duration3"></strong></p>
+                                    <p class="text-white small m-0">TOTAL: <strong id="slotcount3"></strong></p>
                                 </div>
                             </div>
                         </div>
@@ -105,6 +111,8 @@
                                     <p id="status4" class="m-0"><strong>P4 - </strong></p>
                                     <p class="text-white small m-0">TIME IN: <strong id="inTime4"></strong></p>
                                     <p class="text-white small m-0">TIME OUT: <strong id="outTime4"></strong></p>
+                                    <p class="text-white small m-0">DURATION: <strong id="duration4"></strong></p>
+                                    <p class="text-white small m-0">TOTAL: <strong id="slotcount4"></strong></p>
                                 </div>
                             </div>
                         </div>
@@ -181,14 +189,15 @@
     <script src="assets/js/Lightbox-Gallery-No-Gutters-Lightbox-Gallery.js"></script>
     <script src="assets/js/form-submit.js"></script>
     <script src="assets/js/tutorial.js"></script>
-    <script src="assets/js/sensor.js"></script>
+    <script src="assets/js/sensor-admin.js"></script>
     <script src="assets/js/realtime-count.js"></script>
-    <!-- <script src="assets/js/protectWebsite.js"></script> -->
+    <script src="assets/js/protectWebsite.js"></script>
+    <script src="assets/js/slots-count.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/control-servo-motor.js"></script>
     <script src="assets/js/theme.js"></script>
     <script>
-        AdminObj.drive();
+        // AdminObj.drive();
     </script>
 </body>
 

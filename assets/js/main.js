@@ -88,7 +88,8 @@ function submitLoginForm(formId) {
       { title: "SLOT ID", data: 1 },
       { title: "TIME IN", data: 2 },
       { title: "TIME OUT", data: 3 },
-      { title: "CREATED AT", data: 4 },
+      { title: "DURATION", data: 4 },
+      { title: "CREATED AT", data: 5 },
     ],
     search: {
       return: true,
@@ -135,11 +136,11 @@ function submitLoginForm(formId) {
   
   // ClientObj.drive();
   // AdminObj.drive();
+  submitLoginForm("#sign-in-form");
   setInterval(checkSensor, 2000);
   setInterval(getCount, 2000);
+  setInterval(getSlotsCount, 2000);
   getChartData();
-  submitLoginForm("#sign-in-form");
-  checkSensor();
   getCount();
   ProtectPage();
 })();
