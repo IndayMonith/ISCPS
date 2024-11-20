@@ -20,7 +20,7 @@
                 <nav class="navbar navbar-expand bg-white shadow mb-4 topbar">
                     <div class="container-fluid"><img class="mx-2" src="assets/img/pagadian.jpg" height="60">
                         <h2 class="mt-2" style="font-family: 'ADLaM Display', serif;color: rgb(60,14,80);">ISCPS&nbsp;</h2>
-                        <h2 class="d-sm-none d-md-block mt-2" style="font-family: 'ADLaM Display', serif;color: rgb(60,14,80);">- IoT Smart Car Parking System&nbsp;</h2>
+                        <!-- <h2 class="d-sm-none d-md-block mt-2" style="font-family: 'ADLaM Display', serif;color: rgb(60,14,80);">- IoT Smart Car Parking System&nbsp;</h2> -->
                         <ul class="navbar-nav flex-nowrap ms-auto">
                             <li class="nav-item"><button class="btn btn-primary" type="button" data-bs-target="#login" data-bs-toggle="modal">Sign In</button></li>
                         </ul>

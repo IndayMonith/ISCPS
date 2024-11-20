@@ -127,7 +127,7 @@
 
         // Set up WiFi and DNS server
         WiFi.softAPConfig(apIP, apIP, IPAddress(255, 255, 255, 0));
-        WiFi.softAP(ssid, password);
+        WiFi.softAP(ssid);
         dnsServer.start(53, "*", apIP);
 
         // Setup web server routes dynamically
