@@ -152,6 +152,24 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="card shadow mb-4" id="parking-tali">
+                        <div class="card-header py-3">
+                            <p class="text-primary m-0 fw-bold">Parking Tali</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive table mt-2" id="dataTable-1" role="grid" aria-describedby="dataTable_info">
+                                <table class="table my-0" id="dataTable-tali">
+                                    <thead>
+                                        
+                                    </thead>
+                                    <tbody>
+                                       
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <footer class="bg-white sticky-footer">

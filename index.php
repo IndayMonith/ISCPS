@@ -71,6 +71,11 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="row g-0 photos mb-5" id="parking-lot-image" data-bss-baguettebox="">
+                        <div class="col item"><a href="" id="layout-link"><img class="img-fluid w-100" src="" id="layout-image"></a></div>
+                    </div>
+
                     <div id="parking-slots" class="row">
                         <div class="col-lg-6 mb-4">
                             <div id="slot1" class="card text-white shadow">
@@ -110,9 +115,7 @@
                         </div>
                     </div>
 
-                    <div class="row g-0 photos" id="parking-lot-image" data-bss-baguettebox="">
-                        <div class="col item"><a href="assets/img/Screenshot%202024-09-30%20235928.png"><img class="img-fluid w-100" src="assets/img/Screenshot%202024-09-30%20235928.png"></a></div>
-                    </div>
+
                 </div>
             </div>
             <footer class="bg-white sticky-footer">
@@ -168,7 +171,7 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/theme.js"></script>
     <script>
-          ClientObj.drive();
+        //   ClientObj.drive(); 
     </script>
 </body>
 

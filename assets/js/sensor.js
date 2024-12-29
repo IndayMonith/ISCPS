@@ -82,48 +82,94 @@ function updateSlot(slotId, statusId, status, parkingSlot) {
   }
 }
 
+function updateImageAndLink(sensorStates) {
+  // Determine the correct image filename based on sensor states
+  let fileName = "";
+  if (sensorStates.includes(1)) {
+    let activeSensors = sensorStates
+      .map((state, index) => (state === 1 ? index + 1 : null))
+      .filter(Boolean);
+    fileName = activeSensors.join("-");
+  } else {
+    fileName = "0"; // Default image if no sensors are active
+  }
+
+  // Update the href and src attributes
+  const newPath = `assets/img/layout/${fileName}.png`;
+  $("#layout-link").attr("href", newPath);
+  $("#layout-image").attr("src", newPath);
+}
+
 function checkSensor() {
-  $.ajax({
-    type: "GET",
-    url: "http://10.0.0.1/d1",
-    success: function (data) {
-      updateSlot("slot1", "status1", data.sensorState, "P1 - ");
-    },
-    error: function (data) {
-      console.error("Error fetching data for slot 1");
-    },
+  const sensorUrls = [
+    "http://10.0.0.1/d1",
+    "http://10.0.0.1/d2",
+    "http://10.0.0.1/d3",
+    "http://10.0.0.1/d4",
+  ];
+
+  let sensorStates = Array(sensorUrls.length).fill(0); // Initialize sensor states to 0
+
+  // Fetch sensor states
+  let ajaxRequests = sensorUrls.map((url, index) => {
+    return $.ajax({
+      type: "GET",
+      url: url,
+      success: function (data) {
+        // Assume sensorState is returned as 1 or 0
+        sensorStates[index] = data.sensorState || 0;
+      },
+      error: function () {
+        console.error(`Error fetching data for sensor ${index + 1}`);
+      },
+    });
   });
 
-  $.ajax({
-    type: "GET",
-    url: "http://10.0.0.1/d2",
-    success: function (data) {
-      updateSlot("slot2", "status2", data.sensorState, "P2 - ");
-    },
-    error: function (data) {
-      console.error("Error fetching data for slot 2");
-    },
-  });
+  // After all requests complete, update the image and link
+  $.when(...ajaxRequests).done(() => {
+    updateImageAndLink(sensorStates);
+    $.ajax({
+      type: "GET",
+      url: "http://10.0.0.1/d1",
+      success: function (data) {
+        updateSlot("slot1", "status1", data.sensorState, "P1 - ");
+      },
+      error: function (data) {
+        console.error("Error fetching data for slot 1");
+      },
+    });
 
-  $.ajax({
-    type: "GET",
-    url: "http://10.0.0.1/d3",
-    success: function (data) {
-      updateSlot("slot3", "status3", data.sensorState, "P3 - ");
-    },
-    error: function (data) {
-      console.error("Error fetching data for slot 3");
-    },
-  });
+    $.ajax({
+      type: "GET",
+      url: "http://10.0.0.1/d2",
+      success: function (data) {
+        updateSlot("slot2", "status2", data.sensorState, "P2 - ");
+      },
+      error: function (data) {
+        console.error("Error fetching data for slot 2");
+      },
+    });
 
-  $.ajax({
-    type: "GET",
-    url: "http://10.0.0.1/d4",
-    success: function (data) {
-      updateSlot("slot4", "status4", data.sensorState, "P4 - ");
-    },
-    error: function (data) {
-      console.error("Error fetching data for slot 4");
-    },
+    $.ajax({
+      type: "GET",
+      url: "http://10.0.0.1/d3",
+      success: function (data) {
+        updateSlot("slot3", "status3", data.sensorState, "P3 - ");
+      },
+      error: function (data) {
+        console.error("Error fetching data for slot 3");
+      },
+    });
+
+    $.ajax({
+      type: "GET",
+      url: "http://10.0.0.1/d4",
+      success: function (data) {
+        updateSlot("slot4", "status4", data.sensorState, "P4 - ");
+      },
+      error: function (data) {
+        console.error("Error fetching data for slot 4");
+      },
+    });
   });
 }

@@ -17,14 +17,14 @@ $columns = array(
         'db' => 'time_in',
         'dt' => 2,
         'formatter' => function ($d, $row) {
-            return date('g:i A', strtotime($d));
+            return date('g:i:s A', strtotime($d));
         }
     ),
     array(
         'db' => 'time_out',
         'dt' => 3,
         'formatter' => function ($d, $row) {
-            return date('g:i A', strtotime($d));
+            return date('g:i:s A', strtotime($d));
         }
     ),
     array(
